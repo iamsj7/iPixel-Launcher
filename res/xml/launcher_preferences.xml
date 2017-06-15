@@ -31,6 +31,13 @@
         </intent>
         </com.android.launcher3.views.ButtonPreference>
 
+    <com.android.launcher3.preferences.IconPackPreference
+        android:key="pref_iconPackPackage"
+        android:title="@string/icon_pack"
+        android:summary="@string/icon_pack_summary"
+        android:persistent="true"
+    />
+
     <SwitchPreference
         android:defaultValue="true"
         android:icon="@drawable/google_app"
