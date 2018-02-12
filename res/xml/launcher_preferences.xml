@@ -72,6 +72,15 @@
     <PreferenceCategory android:title="@string/homescreen_category_title">
 
         <ListPreference
+            android:key="pref_icon_size"
+            android:title="@string/icon_size_title"
+            android:summary="%s"
+            android:entries="@array/icon_size_names"
+            android:entryValues="@array/icon_size_values"
+            android:defaultValue="average"
+            android:persistent="true" />
+
+        <ListPreference
             android:defaultValue=""
             android:entries="@array/icon_shape_override_paths_names"
             android:entryValues="@array/icon_shape_override_paths_values"

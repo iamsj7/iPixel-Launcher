@@ -225,6 +225,17 @@ public class SettingsActivity extends Activity {
                     return true;
                 }
             });
+
+            final ListPreference iconSizes = (ListPreference) findPreference(Utilities.ICON_SIZE);
+            iconSizes.setSummary(iconSizes.getEntry());
+            iconSizes.setOnPreferenceChangeListener(new OnPreferenceChangeListener() {
+                public boolean onPreferenceChange(Preference preference, Object newValue) {
+                    int index = iconSizes.findIndexOfValue((String) newValue);
+                    iconSizes.setSummary(iconSizes.getEntries()[index]);
+                    restart(getActivity());
+                    return true;
+                }
+            });
         }
 
         @Override

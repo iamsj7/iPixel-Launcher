@@ -51,4 +51,12 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
     <string name="allapps_show_label_title">AppDrawer Apps Labels</string>
     <string name="allapps_show_label_summary">Show labels below the icons in app drawer</string>
 
+    <!-- Icon size -->
+    <string name="icon_size_title">Icon size</string>
+    <string name="icon_size_extra_small">Tiny</string>
+    <string name="icon_size_small">Small</string>
+    <string name="icon_size_average">Default</string>
+    <string name="icon_size_large">Large</string>
+    <string name="icon_size_extra_large">Extra large</string>
+
 </resources>
