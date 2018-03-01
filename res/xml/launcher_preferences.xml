@@ -55,6 +55,20 @@
         android:summary="@string/allow_rotation_desc"
         android:title="@string/allow_rotation_title" />
   
+    <SwitchPreference
+        android:key="pref_desktop_show_label"
+        android:title="@string/desktop_show_label_title"
+        android:summary="@string/desktop_show_label_summary"
+        android:defaultValue="true"
+        android:persistent="true"/>
+
+    <SwitchPreference
+        android:key="pref_allapps_show_label"
+        android:title="@string/allapps_show_label_title"
+        android:summary="@string/allapps_show_label_summary"
+        android:defaultValue="true"
+        android:persistent="true"/>
+  
     <PreferenceCategory android:title="@string/homescreen_category_title">
 
         <ListPreference
@@ -96,6 +110,7 @@
             android:persistent="true"
             android:summary="%s"
             android:title="@string/number_of_hotseat_title" />
+
 
         <ListPreference
             android:key="pref_theme_style"
