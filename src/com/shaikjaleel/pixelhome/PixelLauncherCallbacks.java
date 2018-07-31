@@ -21,6 +21,9 @@ import android.os.Bundle;
 
 import com.android.launcher3.AppInfo;
 import com.android.launcher3.LauncherCallbacks;
+import com.android.launcher3.SettingsActivity;
+import com.android.launcher3.Utilities;
+import com.google.android.libraries.gsa.launcherclient.LauncherClient;
 
 import java.io.FileDescriptor;
 import java.io.PrintWriter;
@@ -28,8 +31,16 @@ import java.util.ArrayList;
 
 public class PixelLauncherCallbacks implements LauncherCallbacks,
         SharedPreferences.OnSharedPreferenceChangeListener {
+    public static final String SEARCH_PACKAGE = "com.google.android.googlequicksearchbox";
 
     private final PixelLauncher mLauncher;
+
+    private OverlayCallbackImpl mOverlayCallbacks;
+    private LauncherClient mLauncherClient;
+
+    private boolean mStarted;
+    private boolean mResumed;
+    private boolean mAlreadyOnHome;
 
 
     public PixelLauncherCallbacks(PixelLauncher launcher) {
@@ -38,27 +49,44 @@ public class PixelLauncherCallbacks implements LauncherCallbacks,
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
-
+        SharedPreferences prefs = Utilities.getPrefs(mLauncher);
+        mOverlayCallbacks = new OverlayCallbackImpl(mLauncher);
+        mLauncherClient = new LauncherClient(mLauncher, mOverlayCallbacks, getClientOptions(prefs));
+        mOverlayCallbacks.setClient(mLauncherClient);
+        prefs.registerOnSharedPreferenceChangeListener(this);
     }
 
     @Override
     public void onResume() {
+        mResumed = true;
+        if (mStarted) {
+            mAlreadyOnHome = true;
+        }
 
     }
 
     @Override
     public void onStart() {
+        mStarted = true;
+        mLauncherClient.onStart();
 
     }
 
     @Override
     public void onStop() {
+        mStarted = false;
+        if (!mResumed) {
+            mAlreadyOnHome = false;
+        }
+
+        mLauncherClient.onStop();
 
     }
 
     @Override
     public void onPause() {
-
+        mResumed = false;
+        mLauncherClient.onPause();
     }
 
     @Override
@@ -83,12 +111,12 @@ public class PixelLauncherCallbacks implements LauncherCallbacks,
 
     @Override
     public void onAttachedToWindow() {
-
+        mLauncherClient.onAttachedToWindow();
     }
 
     @Override
     public void onDetachedFromWindow() {
-
+        mLauncherClient.onDetachedFromWindow();
     }
 
     @Override
@@ -98,7 +126,7 @@ public class PixelLauncherCallbacks implements LauncherCallbacks,
 
     @Override
     public void onHomeIntent(boolean internalStateHandled) {
-
+        mLauncherClient.hideOverlay(mAlreadyOnHome);
     }
 
     @Override
@@ -128,11 +156,23 @@ public class PixelLauncherCallbacks implements LauncherCallbacks,
 
     @Override
     public boolean hasSettings() {
-        return false;
+        return true;
     }
 
     @Override
     public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
+        if (SettingsActivity.KEY_MINUS_ONE.equals(key)) {
+            mLauncherClient.setClientOptions(getClientOptions(sharedPreferences));
+        }
+    }
+
+    private LauncherClient.ClientOptions getClientOptions(SharedPreferences prefs) {
+        boolean hasPackage = PixelUtils.hasPackageInstalled(mLauncher, SEARCH_PACKAGE);
+        boolean isEnabled = prefs.getBoolean(SettingsActivity.KEY_MINUS_ONE, true);
+        return new LauncherClient.ClientOptions(hasPackage && isEnabled,
+                true, /* enableHotword */
+                true /* enablePrewarming */
+        );
 
     }
 }
