@@ -71,7 +71,6 @@ public class IconShapeOverride {
             return false;
         }
 */
-
         try {
             if (getSystemResField().get(null) != Resources.getSystem()) {
                 // Our assumption that mSystem is the system resource is not true.
