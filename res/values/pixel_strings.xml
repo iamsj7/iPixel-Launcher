@@ -13,7 +13,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
-    <!-- Google Feed -->
-    <string name="settings_feed">Enable Google feed integration</string>
+    <string name="google_feed_title">Display Google app</string>
+    <string name="google_feed_summary">To the left of the main Home screen</string>
 
 </resources>
