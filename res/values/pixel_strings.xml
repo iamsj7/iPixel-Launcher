@@ -43,5 +43,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
     <!-- App Name -->
     <string name="pixel_app_name" translatable="false">Pixel Home</string>
+    <string name="icon_shape_rounded_square">Rounded square</string>
 
 </resources>
