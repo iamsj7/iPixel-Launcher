@@ -41,6 +41,13 @@
 
     <SwitchPreference
         android:defaultValue="true"
+        android:key="pref_qsb_show"
+        android:persistent="true"
+        android:summary="@string/pref_qsb_show_summary"
+        android:title="@string/pref_qsb_show_title"/>
+ 
+    <SwitchPreference
+        android:defaultValue="true"
         android:icon="@drawable/add_icons"
         android:key="pref_add_icon_to_home"
         android:persistent="true"

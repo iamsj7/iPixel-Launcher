@@ -13,6 +13,12 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
+    <!--Themes -->
+    <string name="theme_style_title">Theme style</string>
+    <string name="theme_style_auto">Wallpaper based</string>
+    <string name="theme_style_light">Light style</string>
+    <string name="theme_style_dark">Dark style</string>
+
     <string name="google_feed_title">Display Google app</string>
     <string name="google_feed_summary">To the left of the main Home screen</string>
 	
@@ -58,5 +64,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
     <string name="icon_size_average">Default</string>
     <string name="icon_size_large">Large</string>
     <string name="icon_size_extra_large">Extra large</string>
-
+    <string name="pref_qsb_show_summary"></string>
+    <string name="pref_qsb_show_title">Show search widget</string>
 </resources>

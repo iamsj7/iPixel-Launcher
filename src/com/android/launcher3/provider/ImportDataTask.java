@@ -132,8 +132,8 @@ public class ImportDataTask {
         String profileId = Long.toString(UserManagerCompat.getInstance(mContext)
                 .getSerialNumberForUser(Process.myUserHandle()));
 
-        boolean createEmptyRowOnFirstScreen = false;
-        if (FeatureFlags.QSB_ON_FIRST_SCREEN) {
+        boolean createEmptyRowOnFirstScreen;
+        if (Utilities.showQsbWidget(mContext)) {
             try (Cursor c = mContext.getContentResolver().query(mOtherFavoritesUri, null,
                     // get items on the first row of the first screen
                     "profileId = ? AND container = -100 AND screen = ? AND cellY = 0",

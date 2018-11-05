@@ -136,8 +136,8 @@ public final class Utilities {
     public static final String HOTSEAT_ICONS = "pref_hotseat_icons";
     public static final String DESKTOP_SHOW_LABEL = "pref_desktop_show_label";
     public static final String ALLAPPS_SHOW_LABEL = "pref_allapps_show_label";
-
     public static final String ICON_SIZE = "pref_icon_size";
+    public static final String QSB_SHOW = "pref_qsb_show";
 
     public static boolean showDesktopLabel(Context context) {
         return getPrefs(context).getBoolean(DESKTOP_SHOW_LABEL, true);
@@ -200,6 +200,10 @@ public final class Utilities {
         } catch (Exception e) {
             return preferenceFallback;
         }
+    }
+
+    public static boolean showQsbWidget(Context context) {
+         return getPrefs(context).getBoolean(QSB_SHOW, FeatureFlags.QSB_ON_FIRST_SCREEN);
     }
 
     /**
