@@ -71,6 +71,7 @@ public class SettingsActivity extends Activity {
 
     private static final String ICON_BADGING_PREFERENCE_KEY = "pref_icon_badging";
     static final String KEY_FEED_INTEGRATION = "pref_feed_integration";
+    static final String KEY_PREF_LEGACY_ICON_MASK = "pref_legacy_icon_mask";
 
     /** Hidden field Settings.Secure.NOTIFICATION_BADGING */
     public static final String NOTIFICATION_BADGING = "notification_badging";

@@ -31,13 +31,6 @@
         </intent>
         </com.android.launcher3.views.ButtonPreference>
 
-    <com.android.launcher3.preferences.IconPackPreference
-        android:key="pref_iconPackPackage"
-        android:title="@string/icon_pack"
-        android:summary="@string/icon_pack_summary"
-        android:persistent="true"
-    />
-
     <SwitchPreference
         android:defaultValue="true"
         android:icon="@drawable/google_app"
@@ -72,6 +65,20 @@
         android:title="@string/theme_style_title" />
 
     <PreferenceCategory android:title="@string/homescreen_category_title">
+
+        <com.android.launcher3.preferences.IconPackPreference
+            android:key="pref_iconPackPackage"
+            android:title="@string/icon_pack"
+            android:summary="@string/icon_pack_summary"
+            android:persistent="true"
+            />
+
+        <SwitchPreference
+            android:key="pref_legacy_icon_mask"
+            android:title="@string/legacy_icon_mask_title"
+            android:summary="@string/legacy_icon_mask_summary"
+            android:defaultValue="false"
+            android:persistent="true"/>
 
         <SwitchPreference
             android:defaultValue="true"

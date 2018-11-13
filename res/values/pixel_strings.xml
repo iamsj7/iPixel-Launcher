@@ -69,5 +69,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
     <string name="icon_pack">Icon pack</string>
     <string name="icon_pack_summary">Select a custom icon pack</string>
     <string name="icons_category_title">Icons</string>
+   <!-- Icon mask -->
+   <string name="legacy_icon_mask_title">Force shape mask on legacy icons</string>
+   <string name="legacy_icon_mask_summary">Could cause issue with custom icon packs, if enabled</string>
 
 </resources>
