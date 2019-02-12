@@ -19,6 +19,7 @@
 -->
 <manifest
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.android.launcher3">
     <uses-sdk android:targetSdkVersion="23" android:minSdkVersion="21"/>
     <!--
@@ -59,14 +60,15 @@
         android:theme="@style/AppTheme"
         android:largeHeap="@bool/config_largeHeap"
         android:restoreAnyVersion="true"
-        android:supportsRtl="true" >
+        android:supportsRtl="true"
+        tools:ignore="GoogleAppIndexingWarning">
 
         <!--
         Main launcher activity. When extending only change the name, and keep all the
         attributes and intent filters the same
         -->
         <activity
-            android:name="com.android.launcher3.Launcher"
+            android:name="com.shaikjaleel.pixelhome.PixelLauncher"
             android:launchMode="singleTask"
             android:clearTaskOnLaunch="true"
             android:stateNotNeeded="true"
