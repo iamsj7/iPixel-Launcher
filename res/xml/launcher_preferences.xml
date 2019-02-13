@@ -16,9 +16,11 @@
 
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <com.android.launcher3.views.ButtonPreference
+    <PreferenceCategory android:title="@string/home_category_title"/>
+        <com.android.launcher3.views.ButtonPreference
         android:key="pref_icon_badging"
         android:title="@string/icon_badging_title"
+        android:icon="@drawable/notifications_dots"
         android:persistent="false"
         android:widgetLayout="@layout/notification_pref_warning" >
         <intent android:action="android.settings.NOTIFICATION_SETTINGS">
@@ -27,68 +29,116 @@
                 android:name=":settings:fragment_args_key"
                 android:value="notification_badging" />
         </intent>
-    </com.android.launcher3.views.ButtonPreference>
+        </com.android.launcher3.views.ButtonPreference>
 
     <SwitchPreference
         android:defaultValue="true"
+        android:icon="@drawable/google_app"
         android:key="pref_feed_integration"
         android:persistent="true"
-        android:title="@string/google_feed_title"
-        android:summary="@string/google_feed_summary" />
+        android:summary="@string/google_feed_summary"
+        android:title="@string/google_feed_title" />
 
     <SwitchPreference
-        android:key="pref_add_icon_to_home"
-        android:title="@string/auto_add_shortcuts_label"
-        android:summary="@string/auto_add_shortcuts_description"
         android:defaultValue="true"
-        android:persistent="true" />
+        android:icon="@drawable/add_icons"
+        android:key="pref_add_icon_to_home"
+        android:persistent="true"
+        android:summary="@string/auto_add_shortcuts_description"
+        android:title="@string/auto_add_shortcuts_label" />
 
     <SwitchPreference
-        android:key="pref_allowRotation"
-        android:title="@string/allow_rotation_title"
-        android:summary="@string/allow_rotation_desc"
         android:defaultValue="@bool/allow_rotation"
-        android:persistent="true" />
+        android:icon="@drawable/homescreen_rotation"
+        android:key="pref_allowRotation"
+        android:persistent="true"
+        android:summary="@string/allow_rotation_desc"
+        android:title="@string/allow_rotation_title" />
+  
+    <PreferenceCategory android:title="@string/homescreen_category_title">
 
-    <ListPreference
-        android:key="pref_override_icon_shape"
-        android:title="@string/icon_shape_override_label"
-        android:summary="%s"
-        android:entries="@array/icon_shape_override_paths_names"
-        android:entryValues="@array/icon_shape_override_paths_values"
-        android:defaultValue=""
-        android:persistent="false" />
+        <ListPreference
+            android:defaultValue=""
+            android:entries="@array/icon_shape_override_paths_names"
+            android:entryValues="@array/icon_shape_override_paths_values"
+            android:icon="@drawable/icon_shape"
+            android:key="pref_override_icon_shape"
+            android:persistent="false"
+            android:summary="%s"
+            android:title="@string/icon_shape_override_label" />
 
-    <PreferenceCategory
-        android:key="grid_category"
-        android:title="@string/grid_category_title">
+        <ListPreference
+            android:defaultValue="-1"
+            android:entries="@array/grid_names"
+            android:entryValues="@array/grid_values"
+            android:icon="@drawable/grid_options"
+            android:key="pref_grid_columns"
+            android:persistent="true"
+            android:summary="%s"
+            android:title="@string/number_of_columns_title" />
 
-    <ListPreference
-        android:key="pref_grid_columns"
-        android:title="@string/number_of_columns_title"
-        android:summary="%s"
-        android:entries="@array/grid_names"
-        android:entryValues="@array/grid_values"
-        android:defaultValue="-1"
-        android:persistent="true" />
- 
-    <ListPreference
-        android:key="pref_grid_rows"
-        android:title="@string/number_of_rows_title"
-        android:summary="%s"
-        android:entries="@array/grid_names"
-        android:entryValues="@array/grid_values"
-        android:defaultValue="-1"
-        android:persistent="true" />
+        <ListPreference
+            android:defaultValue="-1"
+            android:entries="@array/grid_names"
+            android:entryValues="@array/grid_values"
+            android:icon="@drawable/grid_row"
+            android:key="pref_grid_rows"
+            android:persistent="true"
+            android:summary="%s"
+            android:title="@string/number_of_rows_title" />
 
- 
-    <ListPreference
-        android:key="pref_hotseat_icons"
-        android:title="@string/number_of_hotseat_title"
-        android:summary="%s"
-        android:entries="@array/grid_names"
-        android:entryValues="@array/grid_values"
-        android:defaultValue="-1"
-        android:persistent="true" />
+        <ListPreference
+            android:defaultValue="-1"
+            android:entries="@array/grid_names"
+            android:entryValues="@array/grid_values"
+            android:icon="@drawable/home_apps"
+            android:key="pref_hotseat_icons"
+            android:persistent="true"
+            android:summary="%s"
+            android:title="@string/number_of_hotseat_title" />
      </PreferenceCategory>
+	 
+	     <PreferenceCategory android:title="@string/about_pixel">
+        <PreferenceScreen
+            android:key="about_screen"
+            android:icon="@drawable/app_info"
+            android:summary="@string/sum_about_app_pixel"
+            android:title="@string/about_pixel_us">
+			<Preference
+                android:key="@string/developer_info"
+                android:title="@string/developer_info"
+                android:summary="@string/developer_info_sum"
+                android:persistent="false">
+            </Preference>
+			<Preference
+                android:key="@string/app_base_title"
+                android:title="@string/app_base_title"
+                android:summary="@string/app_base_title_sum"
+                android:persistent="false">
+            </Preference>
+            <Preference
+                android:title="@string/thanks"
+                android:summary="@string/sum_thanks" >
+            </Preference>
+			<Preference
+                android:key="@string/about_pixel_version"
+                android:title="@string/about_pixel_version"
+                android:summary="@string/about_pixel_version_sum"
+                android:persistent="false">
+            </Preference>
+            <Preference
+                android:title="@string/date"
+                android:summary="@string/sum_date" >
+            </Preference>
+			
+            <Preference
+                android:key="app_info"
+                android:title="@string/app_info_drop_target_label"
+                android:persistent="false">
+                <intent
+                    android:action="android.settings.APPLICATION_DETAILS_SETTINGS"
+                    android:data="package:com.shaikjaleel.pixelhome" />
+            </Preference>
+        </PreferenceScreen>
+    </PreferenceCategory>
 </PreferenceScreen>

@@ -18,11 +18,27 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 	
     <!-- Grid -->
     <string name="num_default">Default</string>
-    <string name="grid_category_title">Columns and rows</string>
+    <string name="homescreen_category_title">Dock/App Drawer Settings</string>
+    <string name="home_category_title">Homescreen Settings</string>
     <string name="number_of_columns_title">Grid and app drawer columns</string>
     <string name="number_of_rows_title">Grid and app drawer rows</string>
     <string name="number_of_hotseat_title">Homescreen quicklaunch icons</string>
     <string name="state_loading">Applying\u2026</string>
     <string name="app_drawer_category_title">App drawer</string>
+
+    <!-- About -->
+    <string name="about_pixel">About</string>
+    <string name="about_pixel_us">Pixel Home</string>
+    <string name="about_pixel_version">Version</string>
+    <string name="about_pixel_version_sum">1.0</string>
+    <string name="thanks">Thanks for</string>
+    <string name="sum_thanks">- Amir Zaidi (amirzaidi)\n- shubbyy(Ruthless Launcher)\n- ezio84\n- arco\n- DirtyUnicorns Team\n- OmniRom Team\n- CyperOS Team\n </string>
+    <string name="date">Build date</string>
+    <string name="sum_date">13/02/19</string>
+    <string name="sum_about_app_pixel">About this app, version, information</string>
+    <string name="developer_info_sum">Shaik Jaleel (@iamsj7)</string>
+    <string name="developer_info">Developer Info</string>
+    <string name="app_base_title">Based On</string>
+    <string name="app_base_title_sum">Based On Pure AOSP Launcher3</string>
 
 </resources>
