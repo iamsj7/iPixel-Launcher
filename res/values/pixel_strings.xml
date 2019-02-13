@@ -41,4 +41,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
     <string name="app_base_title">Based On</string>
     <string name="app_base_title_sum">Based On Pure AOSP Launcher3</string>
 
+    <!-- App Name -->
+    <string name="pixel_app_name" translatable="false">Pixel Home</string>
+
 </resources>
