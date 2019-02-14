@@ -41,18 +41,11 @@
 
     <SwitchPreference
         android:defaultValue="true"
+        android:icon="@drawable/search_widget"
         android:key="pref_qsb_show"
         android:persistent="true"
         android:summary="@string/pref_qsb_show_summary"
-        android:title="@string/pref_qsb_show_title"/>
- 
-    <SwitchPreference
-        android:defaultValue="true"
-        android:icon="@drawable/add_icons"
-        android:key="pref_add_icon_to_home"
-        android:persistent="true"
-        android:summary="@string/auto_add_shortcuts_description"
-        android:title="@string/auto_add_shortcuts_label" />
+        android:title="@string/pref_qsb_show_title" />
 
     <SwitchPreference
         android:defaultValue="@bool/allow_rotation"
@@ -61,31 +54,53 @@
         android:persistent="true"
         android:summary="@string/allow_rotation_desc"
         android:title="@string/allow_rotation_title" />
-  
-    <SwitchPreference
-        android:key="pref_desktop_show_label"
-        android:title="@string/desktop_show_label_title"
-        android:summary="@string/desktop_show_label_summary"
-        android:defaultValue="true"
-        android:persistent="true"/>
 
-    <SwitchPreference
-        android:key="pref_allapps_show_label"
-        android:title="@string/allapps_show_label_title"
-        android:summary="@string/allapps_show_label_summary"
-        android:defaultValue="true"
-        android:persistent="true"/>
-  
+    <ListPreference
+        android:defaultValue="0"
+        android:entries="@array/theme_style_entries"
+        android:entryValues="@array/theme_style_values"
+        android:icon="@drawable/theme_style"
+        android:key="pref_theme_style"
+        android:persistent="true"
+        android:title="@string/theme_style_title" />
+
     <PreferenceCategory android:title="@string/homescreen_category_title">
 
+        <SwitchPreference
+            android:defaultValue="true"
+            android:icon="@drawable/add_icons"
+            android:key="pref_add_icon_to_home"
+            android:persistent="true"
+            android:summary="@string/auto_add_shortcuts_description"
+            android:title="@string/auto_add_shortcuts_label" />
+
+        <SwitchPreference
+            android:defaultValue="true"
+            android:icon="@drawable/app_lable"
+            android:key="pref_desktop_show_label"
+            android:persistent="true"
+            android:summary="@string/desktop_show_label_summary"
+            android:title="@string/desktop_show_label_title" />
+
+        <SwitchPreference
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:defaultValue="true"
+            android:icon="@drawable/app_lable"
+            android:key="pref_allapps_show_label"
+            android:persistent="true"
+            android:summary="@string/allapps_show_label_summary"
+            android:title="@string/allapps_show_label_title" />
+
         <ListPreference
-            android:key="pref_icon_size"
-            android:title="@string/icon_size_title"
-            android:summary="%s"
+            android:defaultValue="average"
+            android:icon="@drawable/icon_size"
             android:entries="@array/icon_size_names"
             android:entryValues="@array/icon_size_values"
-            android:defaultValue="average"
-            android:persistent="true" />
+            android:key="pref_icon_size"
+            android:persistent="true"
+            android:summary="%s"
+            android:title="@string/icon_size_title" />
 
         <ListPreference
             android:defaultValue=""
@@ -128,15 +143,7 @@
             android:title="@string/number_of_hotseat_title" />
 
 
-        <ListPreference
-            android:key="pref_theme_style"
-            android:title="@string/theme_style_title"
-            android:persistent="true"
-            android:entries="@array/theme_style_entries"
-            android:entryValues="@array/theme_style_values"
-            android:defaultValue="0" />
-
-     </PreferenceCategory>
+    </PreferenceCategory>
 	 
 	     <PreferenceCategory android:title="@string/about_pixel">
         <PreferenceScreen

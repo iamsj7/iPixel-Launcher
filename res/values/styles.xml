@@ -91,7 +91,9 @@
 
     <!-- A derivative project can extend these themes to customize the application theme without
          affecting the base theme -->
-    <style name="AppTheme" parent="@style/LauncherTheme" />
+    <style name="AppTheme" parent="@style/LauncherTheme" >
+        <item name="android:colorAccent">#4384F2</item>
+    </style>
     <style name="AppTheme.DarkText" parent="@style/LauncherTheme.DarkText" />
     <style name="AppTheme.Dark" parent="@style/LauncherTheme.Dark" />
     <style name="AppTheme.Dark.DarkText" parent="@style/LauncherTheme.Dark.DarkText" />
