@@ -81,9 +81,10 @@ public class SettingsActivity extends Activity {
     private static final String EXTRA_SHOW_FRAGMENT_ARGS = ":settings:show_fragment_args";
     private static final int DELAY_HIGHLIGHT_DURATION_MILLIS = 600;
     private static final String SAVE_HIGHLIGHTED_KEY = "android:preference_highlighted";
+	
+	public static final String PREF_THEME_STYLE_KEY = "pref_theme_style";
 
     private static final long WAIT_BEFORE_RESTART = 250;
-    public static final String PREF_THEME_STYLE_KEY = "pref_theme_style";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -110,7 +111,7 @@ public class SettingsActivity extends Activity {
 
         private String mPreferenceKey;
         private boolean mPreferenceHighlighted = false;
-        private ListPreference mThemeStyle;
+		private ListPreference mThemeStyle;
 
         @Override
         public void onCreate(Bundle savedInstanceState) {
@@ -164,7 +165,19 @@ public class SettingsActivity extends Activity {
                 // Initialize the UI once
                 rotationPref.setDefaultValue(getAllowRotationDefaultValue());
             }
-
+			
+            mThemeStyle = (ListPreference) findPreference(PREF_THEME_STYLE_KEY);
+            mThemeStyle.setSummary(mThemeStyle.getEntry());
+            mThemeStyle.setOnPreferenceChangeListener(new OnPreferenceChangeListener() {
+                @Override
+                public boolean onPreferenceChange(Preference preference, Object o) {
+                    String newValue = (String) o;
+                    int valueIndex = mThemeStyle.findIndexOfValue(newValue);
+                    mThemeStyle.setSummary(mThemeStyle.getEntries()[valueIndex]);
+                    return true;
+                }
+            });
+			
             final ListPreference gridColumns = (ListPreference) findPreference(Utilities.GRID_COLUMNS);
             gridColumns.setSummary(gridColumns.getEntry());
             gridColumns.setOnPreferenceChangeListener(new OnPreferenceChangeListener() {
@@ -194,15 +207,6 @@ public class SettingsActivity extends Activity {
                     int index = hotseatColumns.findIndexOfValue((String) newValue);
                     hotseatColumns.setSummary(hotseatColumns.getEntries()[index]);
                     restart(getActivity());
-
-            mThemeStyle = (ListPreference) findPreference(PREF_THEME_STYLE_KEY);
-            mThemeStyle.setSummary(mThemeStyle.getEntry());
-            mThemeStyle.setOnPreferenceChangeListener(new OnPreferenceChangeListener() {
-                @Override
-                public boolean onPreferenceChange(Preference preference, Object o) {
-                    String newValue = (String) o;
-                    int valueIndex = mThemeStyle.findIndexOfValue(newValue);
-                    mThemeStyle.setSummary(mThemeStyle.getEntries()[valueIndex]);
                     return true;
                 }
             });
