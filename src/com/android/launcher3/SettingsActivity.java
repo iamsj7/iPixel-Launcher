@@ -128,7 +128,7 @@ public class SettingsActivity extends Activity {
             HomeKeyWatcher mHomeKeyListener = new HomeKeyWatcher(getActivity());
             mHomeKeyListener.setOnHomePressedListener(() -> {
                 if (mRestartNeeded) {
-                    Utilities.restart(getActivity());
+                    restart(getActivity());
                 }
             });
             mHomeKeyListener.startWatch();
@@ -323,7 +323,7 @@ public class SettingsActivity extends Activity {
             }
             super.onDestroy();
             if (mRestartNeeded) {
-                Utilities.restart(getActivity());
+                restart(getActivity());
             }
         }
 
