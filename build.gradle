@@ -49,20 +49,20 @@ android {
     productFlavors {
         aosp {
             dimension "default"
-            applicationId 'com.shaikjaleel.pixelhome'
-            testApplicationId 'com.shaikjaleel.pixelhome.tests'
+            applicationId 'sj.shaikjaleel.pixelhome'
+            testApplicationId 'sj.shaikjaleel.pixelhome.tests'
         }
 
         l3go {
             dimension "default"
-            applicationId 'com.shaikjaleel.pixelhome'
-            testApplicationId 'com.shaikjaleel.pixelhome.tests'
+            applicationId 'sj.shaikjaleel.pixelhome'
+            testApplicationId 'sj.shaikjaleel.pixelhome.tests'
         }
 
         quickstep {
             dimension "default"
-            applicationId 'com.android.launcher3'
-            testApplicationId 'com.android.launcher3.tests'
+            applicationId 'sj.android.launcher3'
+            testApplicationId 'sj.android.launcher3.tests'
         }
     }
 

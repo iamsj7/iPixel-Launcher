@@ -179,7 +179,7 @@
                 android:persistent="false">
                 <intent
                     android:action="android.settings.APPLICATION_DETAILS_SETTINGS"
-                    android:data="package:com.shaikjaleel.pixelhome" />
+                    android:data="package:sj.shaikjaleel.pixelhome" />
             </Preference>
         </PreferenceScreen>
     </PreferenceCategory>
