@@ -174,11 +174,6 @@
                 android:persistent="false">
             </Preference>
             <Preference
-                android:title="@string/date"
-                android:summary="@string/sum_date" >
-            </Preference>
-			
-            <Preference
                 android:key="app_info"
                 android:title="@string/app_info_drop_target_label"
                 android:persistent="false">
