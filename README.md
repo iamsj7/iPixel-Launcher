@@ -1,3 +1,6 @@
+<img src="https://github.com/iamsj7/iPixel-Launcher/raw/Pixel-Release/Frame.png">
+
+
 # Pixel Home Launcher (Rootless)
 By Shaik Jaleel (@iamsj7)
 

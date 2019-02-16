@@ -36,7 +36,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
     <string name="about_pixel">About</string>
     <string name="about_pixel_us">Pixel Home</string>
     <string name="about_pixel_version">Version</string>
-    <string name="about_pixel_version_sum">1.0</string>
+    <string name="about_pixel_version_sum">1.1</string>
     <string name="thanks">Thanks for</string>
     <string name="sum_thanks">- Amir Zaidi (amirzaidi)\n- shubbyy(Ruthless Launcher)\n- ezio84\n- arco\n- DirtyUnicorns Team\n- OmniRom Team\n- CyperOS Team\n </string>
     <string name="sum_about_app_pixel">About this app, version, information</string>
